@@ -625,6 +625,156 @@
             color: var(--white);
         }
 
+        /* ===== CONVERGENCE ===== */
+        .convergence {
+            border-top: 1px solid var(--gray-800);
+        }
+
+        .conv-statement {
+            font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+            font-weight: 800;
+            line-height: 1.2;
+            letter-spacing: -0.03em;
+            max-width: 900px;
+            margin-bottom: 80px;
+        }
+
+        .conv-statement em {
+            font-style: normal;
+            color: var(--gray-500);
+        }
+
+        .conv-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+        }
+
+        .conv-card {
+            padding: 48px 40px;
+            border: 1px solid var(--gray-800);
+            border-right: none;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .conv-card:last-child {
+            border-right: 1px solid var(--gray-800);
+        }
+
+        .conv-card:first-child {
+            border-radius: var(--radius) 0 0 var(--radius);
+        }
+
+        .conv-card:last-child {
+            border-radius: 0 var(--radius) var(--radius) 0;
+        }
+
+        .conv-card:hover {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .conv-card-label {
+            font-size: 0.6875rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--gray-600);
+            margin-bottom: 24px;
+        }
+
+        .conv-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+            margin-bottom: 14px;
+        }
+
+        .conv-card p {
+            font-size: 0.9375rem;
+            color: var(--gray-400);
+            line-height: 1.75;
+        }
+
+        /* ===== ANIMATION FEATURED ===== */
+        .anim-featured {
+            margin-top: 48px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            border: 1px solid var(--gray-800);
+            border-radius: var(--radius);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .anim-featured::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gray-500), transparent);
+        }
+
+        .anim-content {
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .anim-content .sf-tag {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--gray-500);
+            margin-bottom: 24px;
+        }
+
+        .anim-content h3 {
+            font-size: clamp(1.5rem, 2.5vw, 2rem);
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            margin-bottom: 16px;
+        }
+
+        .anim-content > p {
+            font-size: 1.0625rem;
+            color: var(--gray-400);
+            line-height: 1.8;
+        }
+
+        .anim-visual {
+            background: var(--gray-950);
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 20px;
+            border-left: 1px solid var(--gray-800);
+        }
+
+        .anim-stat {
+            display: flex;
+            align-items: baseline;
+            gap: 16px;
+        }
+
+        .anim-stat-val {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            line-height: 1;
+        }
+
+        .anim-stat-label {
+            font-size: 0.875rem;
+            color: var(--gray-500);
+        }
+
         /* ===== PROCESS ===== */
         .process {
             border-top: 1px solid var(--gray-800);
@@ -934,6 +1084,12 @@
             .step { border-bottom: 1px solid var(--gray-800); }
             .step:nth-child(2) { border-right: none; }
             .about-pillars { grid-template-columns: 1fr; }
+            .conv-grid { grid-template-columns: 1fr 1fr; }
+            .conv-card:nth-child(2) { border-right: 1px solid var(--gray-800); border-radius: 0; }
+            .conv-card:last-child { grid-column: 1 / -1; border-radius: 0 0 var(--radius) var(--radius); border-right: 1px solid var(--gray-800); border-top: none; }
+            .conv-card:first-child { border-radius: var(--radius) 0 0 0; }
+            .anim-featured { grid-template-columns: 1fr; }
+            .anim-visual { border-left: none; border-top: 1px solid var(--gray-800); }
         }
 
         @media (max-width: 768px) {
@@ -974,6 +1130,13 @@
             .service-item { grid-template-columns: 1fr; gap: 8px; padding: 32px 0; }
             .service-num { display: none; }
             .service-featured { padding: 40px 28px; }
+            .conv-grid { grid-template-columns: 1fr; }
+            .conv-card, .conv-card:first-child, .conv-card:nth-child(2), .conv-card:last-child { border-radius: 0; border-right: 1px solid var(--gray-800); border-top: none; grid-column: auto; }
+            .conv-card:first-child { border-top: 1px solid var(--gray-800); border-radius: var(--radius) var(--radius) 0 0; }
+            .conv-card:last-child { border-radius: 0 0 var(--radius) var(--radius); }
+            .anim-featured { grid-template-columns: 1fr; }
+            .anim-content { padding: 40px 28px; }
+            .anim-visual { padding: 40px 28px; border-left: none; border-top: 1px solid var(--gray-800); }
 
             .process-grid { grid-template-columns: 1fr; }
             .step { border-right: none; padding: 32px 0; }
@@ -1045,6 +1208,7 @@
                 <span class="marquee-item">Custom Pipelines</span>
                 <span class="marquee-item">Neural Networks</span>
                 <span class="marquee-item">Open-Source Models</span>
+                <span class="marquee-item">AI + Live-Action</span>
                 <span class="marquee-item">FaceSwap</span>
                 <span class="marquee-item">De-aging</span>
                 <span class="marquee-item">Lipsync</span>
@@ -1057,6 +1221,7 @@
                 <span class="marquee-item">Custom Pipelines</span>
                 <span class="marquee-item">Neural Networks</span>
                 <span class="marquee-item">Open-Source Models</span>
+                <span class="marquee-item">AI + Live-Action</span>
             </div>
         </div>
 
@@ -1085,6 +1250,35 @@
                         <div class="pillar-num">02</div>
                         <h3>Invisible Integration</h3>
                         <p>Our AI-generated elements blend so seamlessly with live-action footage that even trained eyes cannot tell the difference.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== CONVERGENCE ===== -->
+        <section class="convergence section" id="convergence">
+            <div class="wrap">
+                <div class="section-head rv">
+                    <span class="section-tag">Our Approach</span>
+                </div>
+                <p class="conv-statement rv rv-d1">
+                    We bring capabilities to real production that are normally <em>prohibitively expensive</em> or <em>simply impossible</em>. The convergence of AI and live-action filmmaking.
+                </p>
+                <div class="conv-grid">
+                    <div class="conv-card rv rv-d1">
+                        <div class="conv-card-label">Previously Impossible</div>
+                        <h3>Beyond Physical Limits</h3>
+                        <p>Resurrect performances, reverse aging, transform faces mid-shot. Things that no amount of budget could achieve with traditional methods alone are now within reach.</p>
+                    </div>
+                    <div class="conv-card rv rv-d2">
+                        <div class="conv-card-label">Previously Unaffordable</div>
+                        <h3>Democratized Quality</h3>
+                        <p>VFX work that once required million-dollar pipelines and months of rendering is now achievable at a fraction of the cost&mdash;without compromising on cinematic quality.</p>
+                    </div>
+                    <div class="conv-card rv rv-d3">
+                        <div class="conv-card-label">The Convergence</div>
+                        <h3>AI + Live-Action</h3>
+                        <p>We don't replace traditional production&mdash;we supercharge it. Our AI tools integrate directly into existing workflows, adding new layers of creative possibility to every real shoot.</p>
                     </div>
                 </div>
             </div>
@@ -1177,11 +1371,27 @@
                         </div>
                     </div>
 
-                    <div class="service-item rv">
-                        <span class="service-num">06</span>
-                        <h3 class="service-name">AI Animation</h3>
-                        <div class="service-body">
-                            <p>High-end animation powered by generative neural networks. We deliver the aesthetic quality of classic studios at a fraction of the traditional timeline and budget.</p>
+                </div>
+
+                <!-- Featured: AI Animation -->
+                <div class="anim-featured rv">
+                    <div class="anim-content">
+                        <div class="sf-tag">06 &mdash; Animation Studio</div>
+                        <h3>AI Animation</h3>
+                        <p>High-end animation powered by generative neural networks. We deliver the aesthetic quality of classic studios at a fraction of the traditional timeline and budget. From character animation to full episodic content&mdash;neural networks handle the heavy lifting while artists shape the vision.</p>
+                    </div>
+                    <div class="anim-visual" aria-hidden="true">
+                        <div class="anim-stat">
+                            <span class="anim-stat-val">10&times;</span>
+                            <span class="anim-stat-label">Faster than traditional animation pipelines</span>
+                        </div>
+                        <div class="anim-stat">
+                            <span class="anim-stat-val">Studio</span>
+                            <span class="anim-stat-label">Grade aesthetic quality, neural-powered</span>
+                        </div>
+                        <div class="anim-stat">
+                            <span class="anim-stat-val">Any Style</span>
+                            <span class="anim-stat-label">2D, 3D, mixed media, character, abstract</span>
                         </div>
                     </div>
                 </div>
